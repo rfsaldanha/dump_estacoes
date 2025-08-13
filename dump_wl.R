@@ -47,24 +47,24 @@ tab_sensor_772005 <- tbl(con, schema_sensor_772005)
 ## Get data
 dbWriteTable(
   conn = con_duck,
-  name = "sensor_772002",
+  name = "tb_estacao_2_sensor_772002",
   value = tab_sensor_772002 |> collect()
 )
 
 dbWriteTable(
   conn = con_duck,
-  name = "sensor_772003",
+  name = "tb_estacao_2_sensor_772003",
   value = tab_sensor_772003 |> collect()
 )
 dbWriteTable(
   conn = con_duck,
-  name = "sensor_772004",
+  name = "tb_estacao_2_sensor_772004",
   value = tab_sensor_772004 |> collect()
 )
 
 dbWriteTable(
   conn = con_duck,
-  name = "sensor_772005",
+  name = "tb_estacao_2_sensor_772005",
   value = tab_sensor_772005 |> collect()
 )
 
