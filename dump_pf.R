@@ -23,10 +23,12 @@ con_duck <- dbConnect(duckdb(), "estacoes.duckdb")
 ## Schema
 schema_estacao_1b <- dbplyr::in_schema("estacoes", "tb_estacao_1b")
 schema_estacao_3 <- dbplyr::in_schema("estacoes", "tb_estacao_3")
+schema_estacao_4 <- dbplyr::in_schema("estacoes", "tb_estacao_4")
 
 ## Table
 tab_estacao_1b <- tbl(con, schema_estacao_1b)
 tab_estacao_3 <- tbl(con, schema_estacao_3)
+tab_estacao_4 <- tbl(con, schema_estacao_4)
 
 ## Get data
 dbWriteTable(
@@ -40,6 +42,13 @@ dbWriteTable(
   conn = con_duck,
   name = "tab_estacao_3",
   value = tab_estacao_3 |> collect(),
+  overwrite = TRUE
+)
+
+dbWriteTable(
+  conn = con_duck,
+  name = "tab_estacao_4",
+  value = tab_estacao_4 |> collect(),
   overwrite = TRUE
 )
 
